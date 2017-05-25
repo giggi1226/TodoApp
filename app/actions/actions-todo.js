@@ -1,8 +1,4 @@
-// const todoID = 0;
-// export const addTodo = (todoItem) => {
-//   return {
-//     type: 'ADD_TODO',
-//     todoID: i++,
-//     text
-//   };
-// }
+export const addTodoAction = (text) => ({
+  type: 'ADD_TODO',
+  text
+});

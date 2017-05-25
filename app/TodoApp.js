@@ -4,7 +4,7 @@ import {
   View,
 } from 'react-native';
 import {Provider} from 'react-redux';
-import TitleBar from './components/title-bar';
+import TitleBar from './containers/title-bar-container';
 import TodoList from './containers/list-state-mapping';
 import store from './store';
 

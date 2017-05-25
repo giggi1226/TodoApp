@@ -7,11 +7,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const TitleBar = () => (
+const TitleBar = ({addButton}) => (
   <View style={styles.toolbar}>
     <Text style={styles.button}></Text>
     <Text style={styles.title}>ALL Todos</Text>
-    <TouchableOpacity style={styles.button} onPress= {()=>console.log('hello')}>
+    <TouchableOpacity style={styles.button} onPress= {addButton}>
       <Text style={styles.text}>Add</Text>
     </TouchableOpacity>
   </View>
