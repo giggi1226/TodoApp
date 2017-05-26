@@ -3,16 +3,27 @@ import TodoList from '../components/todo-list'
 import {
   ListView
 } from 'react-native';
+import {updateTodoAction} from '../actions/actions-todo';
 
 const ds = new ListView.DataSource({
   rowHasChanged: (r1, r2) => r1 !== r2
 })
 
 function mapStateToProps(state) {
-  console.log('state: ', state.todoListReducer.todos);
+  console.log('state: ', state.todoListReducer);
   return {
-    todolist: ds.cloneWithRows(state.todoListReducer.todos)
+    todolist: ds.cloneWithRows(state.todoListReducer.todos),
+    newTodo: state.todoListReducer.todos.text
   };
 }
 
-export default connect(mapStateToProps)(TodoList);
+function mapDispatchToProps(dispatch){
+  return{
+    changeText: (text) => {
+      console.log('text: ', text);
+      dispatch(updateTodoAction(text))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
