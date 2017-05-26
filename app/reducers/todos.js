@@ -1,6 +1,5 @@
 const todoListReducer = (state = { todos: ['world']}, action) => {
   const newState = {...state};
-  console.log('newState: ', newState);
   switch(action.type){
     case 'ADD_TODO':
       newState.todos.push(state.itemName);

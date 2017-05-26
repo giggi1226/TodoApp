@@ -9,10 +9,7 @@ function mapDispatchToProps(dispatch, getState) {
 }
 
 const thunk = () => (
-  (dispatch, getState) => {
-    console.log('thunk getSate', getState());
-    dispatch(addTodoAction(getState().todoListReducer.itemName))
-  }
+  (dispatch, getState) => dispatch(addTodoAction(getState().todoListReducer.itemName))
 )
 
 export default connect(() => ({}), mapDispatchToProps)(TitleBar);

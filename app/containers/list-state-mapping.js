@@ -10,7 +10,6 @@ const ds = new ListView.DataSource({
 })
 
 function mapStateToProps(state) {
-  console.log('state: ', state.todoListReducer);
   return {
     todolist: ds.cloneWithRows(state.todoListReducer.todos),
     newTodo: state.todoListReducer.todos.text
@@ -19,10 +18,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch){
   return{
-    changeText: (text) => {
-      console.log('text: ', text);
-      dispatch(updateTodoAction(text))
-    }
+    changeText: (text) => dispatch(updateTodoAction(text))
   }
 }
 
