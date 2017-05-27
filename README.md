@@ -9,7 +9,7 @@ A simple todo list application built using react native and redux. The applicati
 3. npm install
 4. npm react-native run-ios
 
-#Purpose
+# Purpose
 
 Their were a few reasons I made this application first reason was to learn redux, I knew how to use it but was not sure how everything was connected. Secondly to write an application that is easy to understand so others can learn.
 
