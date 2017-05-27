@@ -12,7 +12,6 @@ const ds = new ListView.DataSource({
 function mapStateToProps(state) {
   return {
     todolist: ds.cloneWithRows(state.todoListReducer.todos),
-    newTodo: state.todoListReducer.todos.text
   };
 }
 
