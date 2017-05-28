@@ -3,20 +3,46 @@ import {
   ListView,
   TextInput,
   View,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 
+function _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlighted: bool) {
+   return (
+     <View
+       key={`${sectionID}-${rowID}`}
+       style={{
+         height: adjacentRowHighlighted ? 4 : 1,
+         backgroundColor: adjacentRowHighlighted ? '#3B5998' : '#CCCCCC',
+       }}
+     />
+   );
+ }
 
-const TodoList = ({todolist, changeText, newTodo}) => {
+const TodoList = ({todolist, changeText, newTodo, onPressRow}) => {
+
+  const renderRow = (rowData) => (
+    <TouchableOpacity onPress={() => onPressRow(rowData)}>
+      <View style={{padding: 10}}>
+        <Text style={{fontSize: 15}}>{rowData}</Text>
+      </View>
+    </TouchableOpacity>
+  )
+
   return(
     <View>
-    <ListView
-    dataSource={todolist}
-    renderRow={(rowData) => <Text>{rowData}</Text>}/>
-    <TextInput
-      style={{height: 40}}
-    placeholder="Type Here"
-    onChangeText={changeText}/>
+      <TextInput
+        style={{height: 40, borderColor: '#CCCCCC', borderWidth: 1, padding: 10}}
+        placeholder="Add todo here"
+        onChangeText={changeText}
+        value={newTodo}
+      />
+      <ListView
+        dataSource={todolist}
+        renderRow={renderRow}
+        renderSeparator={_renderSeparator}
+        enableEmptySections
+      />
   </View>
   );
 }

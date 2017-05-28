@@ -7,3 +7,8 @@ export const updateTodoAction = (text) => ({
   type: 'UPDATE_TODO',
   payload: text
 });
+
+export const deleteTodoAction = (text) => ({
+  type: 'DELETE_TODO',
+  payload: text
+});

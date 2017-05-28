@@ -1,8 +1,16 @@
 # TodoApp
 
-A simple todo list application built using react native and redux. The application, as of right now, can only add to the list. Just type in something in the input click add and you will see it do its magic.
+A simple todo list application built using react native and redux.
 
-# from the command line
+# What it can do
+
+1. Add to the list
+  Just type in something in the input field click add and you will see it do its magic.
+
+2. Delete from the list (not to be mistaken with marking as complete)
+  Click on the row and it will delete the row from the list
+
+# From the command line
 
 1. clone the repo (I prefer to do cloning on Desktop)
 2. cd into the project
