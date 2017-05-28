@@ -5,9 +5,11 @@ A simple todo list application built using react native and redux.
 # What it can do
 
 1. Add to the list.
+
 Just type in something in the input field click add and you will see it do its magic.
 
 2. Delete from the list (not to be mistaken with marking as complete).
+
 Click on the row and it will delete the row from the list
 
 # From the command line
