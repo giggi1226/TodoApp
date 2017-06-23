@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 function _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlighted: bool) {
    return (
@@ -23,6 +24,7 @@ const TodoList = ({todolist, changeText, newTodo, onPressRow}) => {
 
   const renderRow = (rowData) => (
     <TouchableOpacity onPress={() => onPressRow(rowData)}>
+      <Icon name="ios-person" size={30} color="#4F8EF7" />
       <View style={{padding: 10}}>
         <Text style={{fontSize: 15}}>{rowData}</Text>
       </View>
