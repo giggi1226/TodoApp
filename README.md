@@ -4,7 +4,9 @@ A simple todo list application built using react native and redux.
 
 # Resources
 For the Icons I used react-native-vector-icons - https://github.com/oblador/react-native-vector-icons
+
 To get a grasp of how redux works - http://redux.js.org/docs/basics/ExampleTodoList.html
+
 I also had a look at this repo as a guideline - https://github.com/ajwhite/ReactNative-Redux-Todo-List
 
 # What it can do
