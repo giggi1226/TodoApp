@@ -12,6 +12,8 @@ const todoListReducer = (state = { todos: [{itemName: 'world', isDone: false}], 
       if (action.payload > -1) {
         newState.todos.splice(action.payload, 1);
       }
+    case 'MARK_DONE':
+      newState.todos[action.payload].isDone = !state.todos[action.payload].isDone ;
   }
   return newState;
 }
