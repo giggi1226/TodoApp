@@ -2,6 +2,11 @@
 
 A simple todo list application built using react native and redux.
 
+# Resources
+For the Icons I used react-native-vector-icons - https://github.com/oblador/react-native-vector-icons
+To get a grasp of how redux works - http://redux.js.org/docs/basics/ExampleTodoList.html
+I also had a look at this repo as a guideline - https://github.com/ajwhite/ReactNative-Redux-Todo-List
+
 # What it can do
 
 1. Add to the list.
@@ -10,7 +15,11 @@ A simple todo list application built using react native and redux.
 
 2. Delete from the list (not to be mistaken with marking as complete).
 
-  Click on the row and it will delete the row from the list
+  Click on the trash can and it will delete the row from the list
+
+3. Mark complete
+  
+  Click anywhere on the row (except the trash can) and you will see a nice check mark appear
 
 # From the command line
 
