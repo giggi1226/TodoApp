@@ -5,7 +5,10 @@ export const addTodoAction = (text) => ({
 
 export const updateTodoAction = (text) => ({
   type: 'UPDATE_TODO',
-  payload: text
+  payload: {
+    text,
+    isChecked: false
+  }
 });
 
 export const deleteTodoAction = (text) => ({

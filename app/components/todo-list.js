@@ -20,15 +20,21 @@ function _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlight
    );
  }
 
-const TodoList = ({todolist, changeText, newTodo, onPressRow}) => {
+const TodoList = ({todolist, changeText, newTodo, onPressTrash}) => {
 
   const renderRow = (rowData) => (
-    <TouchableOpacity onPress={() => onPressRow(rowData)}>
-      <Icon name="ios-person" size={30} color="#4F8EF7" />
-      <View style={{padding: 10}}>
-        <Text style={{fontSize: 15}}>{rowData}</Text>
-      </View>
-    </TouchableOpacity>
+  <View style={{flexDirection: 'row', padding: 10, justifyContent: 'space-between'}}>
+      <TouchableOpacity>
+        <View>
+        <Text style={{fontSize: 15}}>
+          <Icon name="ios-checkmark-circle"/>{rowData.itemName}
+        </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => onPressTrash(rowData)}>
+          <Icon name="ios-trash" size={30} color="#4F8EF7" />
+      </TouchableOpacity>
+  </View>
   )
 
   return(

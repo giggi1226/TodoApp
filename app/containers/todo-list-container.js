@@ -19,7 +19,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch){
   return{
     changeText: (text) => dispatch(updateTodoAction(text)),
-    onPressRow: (item) => dispatch(thunk(item))
+    onPressTrash: (item) => dispatch(thunk(item))
   }
 }
 
