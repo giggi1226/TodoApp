@@ -15,3 +15,8 @@ export const deleteTodoAction = (text) => ({
   type: 'DELETE_TODO',
   payload: text
 });
+
+export const isDoneAction = (text) => ({
+  type: 'MARK_DONE',
+  payload: text
+});

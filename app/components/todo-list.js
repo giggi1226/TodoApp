@@ -20,15 +20,21 @@ function _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlight
    );
  }
 
-const TodoList = ({todolist, changeText, newTodo, onPressTrash}) => {
+const showCheck = (rowData) => rowData.isDone ?  <Icon name="ios-checkmark-circle"/> : '';
+
+const TodoList = ({todolist, changeText, newTodo, onPressRow, onPressTrash}) => {
 
   const renderRow = (rowData) => (
+    <TouchableOpacity onPress={() => onPressRow(rowData)}>
     <View style={{flexDirection: 'row', padding: 10, justifyContent: 'space-between'}}>
-      <Text style={{fontSize: 15}}>{rowData.itemName}</Text>
+      <Text style={{fontSize: 15}}>
+        {showCheck(rowData)}{rowData.itemName}
+      </Text>
       <TouchableOpacity onPress={() => onPressTrash(rowData)}>
         <Icon name="ios-trash" size={30} color="#4F8EF7" />
       </TouchableOpacity>
     </View>
+  </TouchableOpacity>
   )
 
   return(
