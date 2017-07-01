@@ -1,16 +1,20 @@
-const todoListReducer = (state = { todos: ['world']}, action) => {
+const todoListReducer = (state = { todos: [{itemName: 'world', isDone: false}]}, action) => {
   const newState = {...state};
   switch(action.type){
     case 'ADD_TODO':
-      newState.todos.push(state.itemName);
+    console.log('state item name', state);
+      newState.todos.push({itemName: state.itemName, isDone: false});
       newState.itemName = ''
       return newState;
     case 'UPDATE_TODO':
-      newState.itemName = action.payload
+      console.log(action.payload);
+      newState.itemName = action.payload.text
     case 'DELETE_TODO':
       if (action.payload > -1) {
         newState.todos.splice(action.payload, 1);
       }
+    // case 'MARK_DONE':
+    //   newState.todos[action.payload].isDone = !state.todos[action.payload].isDone ;
   }
   return newState;
 }

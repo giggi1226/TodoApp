@@ -19,11 +19,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch){
   return{
     changeText: (text) => dispatch(updateTodoAction(text)),
-    onPressRow: (item) => dispatch(thunk(item))
+    onPressTrash: (item) => dispatch(deleteRowThunk(item))
   }
 }
 
-const thunk = (item) => (
+const deleteRowThunk = (item) => (
   (dispatch, getState) => (
     dispatch(deleteTodoAction(getState().todoListReducer.todos.findIndex((todo) => todo === item)))
   )
