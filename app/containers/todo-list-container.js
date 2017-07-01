@@ -10,6 +10,7 @@ const ds = new ListView.DataSource({
 })
 
 function mapStateToProps(state) {
+  console.log('state is: ', state);
   return {
     todolist: ds.cloneWithRows(state.todoListReducer.todos),
     newTodo: state.todoListReducer.itemName
@@ -28,7 +29,7 @@ const deleteRowThunk = (item) => (
   (dispatch, getState) => (
     dispatch(deleteTodoAction(getState().todoListReducer.todos.findIndex((todo) => todo === item)))
   )
-)
+);
 
 const isDoneThunk = (item) => (
   (dispatch, getState) => (
