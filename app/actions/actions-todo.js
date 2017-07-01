@@ -7,7 +7,7 @@ export const updateTodoAction = (text) => ({
   type: 'UPDATE_TODO',
   payload: {
     text,
-    isChecked: false
+    isDone: false
   }
 });
 
