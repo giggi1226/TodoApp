@@ -1,0 +1,25 @@
+resources:
+# - name: every-1m
+#   type: time
+#   source: {interval: 1m}
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/giggi1226/TodoApp.git
+
+jobs:
+- name: navi
+  plan:
+  - get: source-code
+    trigger: true
+  - task: annoy
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: node, tag: 7.10}
+      inputs:
+        - name: source-code
+      run:
+        path: scripts/unit-test.sh
+        dir: source-code
