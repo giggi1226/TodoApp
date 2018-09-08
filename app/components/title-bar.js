@@ -10,7 +10,7 @@ import {
 const TitleBar = ({addButton}) => (
   <View style={styles.toolbar}>
     <Text style={styles.button}></Text>
-    <Text style={styles.title}>ALL Todos</Text>
+    <Text style={styles.title}>ALL Todoshjhhj</Text>
     <TouchableOpacity style={styles.button} onPress={addButton}>
       <Text style={styles.text}>Add</Text>
     </TouchableOpacity>
